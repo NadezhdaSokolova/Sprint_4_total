@@ -11,10 +11,10 @@ public class HeadPage extends ru.qascooter.pageobject.DriverClass {
     public static final String URL = "https://qa-scooter.praktikum-services.ru/";
 
     // Кнопка «Заказать» сверху
-    private final By orderButtonOnTop = By.xpath(".//button[@class= 'Button_Button__ra12g']");
+    public static final String orderButtonOnTop = ".//button[@class= 'Button_Button__ra12g']";
 
     // Кнопка «Заказать» снизу
-    private final By orderButtonAtTheBottom = By.xpath(".//button[@class= 'Button_Button__ra12g Button_Middle__1CSJM']");
+    public static final String orderButtonAtTheBottom = ".//button[@class= 'Button_Button__ra12g Button_Middle__1CSJM']";
 
 
     // Заголовок «Вопросы о важном»
@@ -27,12 +27,9 @@ public class HeadPage extends ru.qascooter.pageobject.DriverClass {
         super (driver);
     }
 
-    public void clickByOrderButtonOnTop() {
-        driver.findElement(orderButtonOnTop).click();
-     }
 
-    public void clickByOrderButtonAtTheBottom() {
-        driver.findElement(orderButtonAtTheBottom).click();
+    public void clickByOrderButton(By orderButton){
+        driver.findElement(orderButton).click();
     }
 
 

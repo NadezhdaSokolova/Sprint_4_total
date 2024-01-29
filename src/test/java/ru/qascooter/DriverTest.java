@@ -7,14 +7,19 @@ import org.openqa.selenium.WebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.qascooter.pageobject.HeadPage.HeadPage;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class DriverTest {
     protected WebDriver driver;
 
+
     @Before
 
-    public void SetUp(){
+    public void setUp(){
 
         driver = getDriver();
         driver.get(HeadPage.URL);
@@ -28,7 +33,7 @@ public class DriverTest {
         driver.navigate().refresh();
     }
 
-    @After
+     @After
 
     public void tearDown (){
         driver.quit();

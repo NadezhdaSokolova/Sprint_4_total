@@ -4,7 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PageObject_OrderPage2Locators extends ru.qascooter.pageobject.DriverClass {
+public class SecondPageObjectAboutRent extends ru.qascooter.pageobject.DriverClass {
 
     // Название странички
     private final By rentDetail = By.xpath(".//div/div/div[@class = 'Order_Header__BZXOb']");
@@ -29,22 +29,22 @@ public class PageObject_OrderPage2Locators extends ru.qascooter.pageobject.Drive
     private final By buttonOrderAfterFillingAll = By.xpath(".//div[@class = 'Order_Buttons__1xGrp']/button[text()='Заказать']");
 
 
-    public PageObject_OrderPage2Locators (WebDriver driver) {
+    public SecondPageObjectAboutRent(WebDriver driver) {
         super(driver);
     }
 
-    public PageObject_OrderPage2Locators clickByTimeFieldToGetCalendar() {
+    public SecondPageObjectAboutRent clickByTimeFieldToGetCalendar() {
         driver.findElement(timeField).click();
         return this;
     }
 
-    public PageObject_OrderPage2Locators fillingCalendar(String data) {
+    public SecondPageObjectAboutRent fillingCalendar(String data) {
         driver.findElement(timeField).sendKeys(data);
         driver.findElement(rentDetail).click();
         return this;
     }
 
-    public PageObject_OrderPage2Locators timeRent(String period) {
+    public SecondPageObjectAboutRent timeRent(String period) {
 
         final String periodOfRentPattern = ".//div[@class = 'Order_Form__17u6u']/div[@class='Dropdown-root is-open']/div[@class='Dropdown-menu']/div[text()= '%s']";
         final String periodOfRentSelected = String.format(periodOfRentPattern, period);
@@ -57,19 +57,19 @@ public class PageObject_OrderPage2Locators extends ru.qascooter.pageobject.Drive
         return this;
     }
 
-    public PageObject_OrderPage2Locators clickByColorOfScooter() {
+    public SecondPageObjectAboutRent clickByColorOfScooter() {
         driver.findElement(blackScooter).click();
         return this;
     }
 
-    public PageObject_OrderPage2Locators fillingCommentField(String comment) {
+    public SecondPageObjectAboutRent fillingCommentField(String comment) {
         driver.findElement(commentField).sendKeys(comment);
         return this;
     }
 
-    public PageObject_OrderPage3Locators clickButtonOrderAfterFillingAllFieldonSecondPage() {
+    public ThirdPageObjectConfirmationOrder clickButtonOrderAfterFillingAllFieldonSecondPage() {
         driver.findElement(buttonOrderAfterFillingAll).click();
-        return new PageObject_OrderPage3Locators(driver);
+        return new ThirdPageObjectConfirmationOrder(driver);
     }
 
 }
